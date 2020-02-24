@@ -1,6 +1,6 @@
 // Removing highlighters and rolling back the magic.
 var qaboxelem = document.querySelectorAll(".qa-box");
-var qaelem = "#id, [data-react-class]";
+var qaelem = "[id]";
 // DIV selector
 var divs = document.getElementsByTagName("DIV");
 // QA elements selector
