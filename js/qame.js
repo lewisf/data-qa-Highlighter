@@ -11,23 +11,22 @@ for (var i = 0; i < dataqas.length; i++) {
   if (id) {
     qaBoxTxt = id;
   }
+  var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
   var qabox =
-    '<div class="qa-box" style="overflow:relative;z-index:100000;background-color:yellow;padding:8px;opacity:0.75;position:relative">' +
+    '<div class="qa-box" style="z-index:100000;opacity:0.9;position:absolute;font-family:monospace;">' +
+    '<div style="position:relative;background-color:' +
+    randomColor +
+    '">' +
     qaBoxTxt +
+    "</div>" +
     "</div>";
   var elems = ["SELECT", "TEXTAREA", "INPUT", "BUTTON", "SPAN"];
-  d.style.border = "2px red solid";
-  d.style.position = "relative";
-  d.parentElement.style.position = "relative";
+  d.style.border = "2px inset " + randomColor;
+  // d.style.position = "absolute";
+  // d.parentElement.style.position = "relative";
   d.className += " qa-bg";
 
-  /* We differentiate between form elements and other types of elements, for getting better positioning results. 
-    This is, rather, something specific for the proyect we are working */
-  if (elems.indexOf(d.tagName) !== -1) {
-    d.insertAdjacentHTML("afterend", qabox);
-  } else {
-    d.insertAdjacentHTML("afterbegin", qabox);
-  }
+  d.insertAdjacentHTML("beforebegin", qabox);
 }
 
 // Visual fix for qa highlighters

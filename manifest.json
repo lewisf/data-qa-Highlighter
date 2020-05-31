@@ -4,14 +4,32 @@
   "name": "data-qa Highlighter",
   "description": "Visualize data-qa´s areas in screen when click extension icon.",
   "version": "2.4",
-
   "icons": {
     "32": "images/icon_32.png",
     "128": "images/icon_128.png"
   },
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage"],
   "browser_action": {
     "default_icon": "images/icon_32.png",
     "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": ["js/hotkey.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*"],
+      "css": ["styles/page/styles.css"]
+    }
+  ],
+  "commands": {
+    "highlight-toggle": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      },
+      "description": "Toggle highlight"
+    }
   }
 }

@@ -1,5 +1,4 @@
 // Scripts for the popup
-
 var found = document.getElementById("found");
 var foundHtml =
   'No elements found in the DOM, but you can check this <a href="https://output.jsbin.com/sikokog" target="_blank" class="link">demo page</a>';
