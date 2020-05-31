@@ -1,3 +1,7 @@
 .qa-box:hover {
   z-index: 10000000;
 }
+
+.qa-text:hover {
+  opacity: 0;
+}
