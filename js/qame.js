@@ -7,9 +7,10 @@ var divs = document.getElementsByTagName("DIV");
 for (var i = 0; i < dataqas.length; i++) {
   var d = dataqas[i];
   var id = d.getAttribute("id");
+  var dataReactClass = d.getAttribute("data-react-class");
   var qaBoxTxt;
-  if (id) {
-    qaBoxTxt = id;
+  if (id || dataReactClass) {
+    qaBoxTxt = id || dataReactClass;
   }
   var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
   var qabox =
